@@ -79,10 +79,12 @@ let appData = {
       appData.income = items.split(", ");
       appData.income.push(prompt("Может что-то ещё?", ""));
       appData.income.sort();
+    } else {
+      console.log("Вы ввели некорректные данные или не ввели их вовсе");
     }
 
     appData.income.forEach(function (item, index) {
-      console.log("Способы доп. заработка: " + index + " " + item);
+      console.log("Способ доп. заработка: " + (index + 1) + " " + item);
 
     });
   }
@@ -90,5 +92,5 @@ let appData = {
 };
 
 for (let key in appData) {
-  console.log("Наша программа включает в себя данные: " + key);
+  console.log("Наша программа включает в себя данные: " + key + " - " + appData[key]);
 }
