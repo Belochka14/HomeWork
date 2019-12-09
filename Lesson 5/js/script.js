@@ -1,13 +1,23 @@
-let li = document.createElement("li"),
-    menu = document.querySelector(".menu"),
-    x = document.body,
-    divTitle = document.getElementById("title");
+let li = document.querySelectorAll('.menu-item'),
+  menu = document.querySelector('.menu'),
+  lastLi = document.createElement('li'),
+  divTitle = document.getElementById('title'),
+  column = document.getElementsByClassName('column'),
+  divAdv = document.querySelector('.adv');
 
+//1)
+menu.insertBefore(li[2], li[1]);
 
-menu.appendChild(li);
-li.classList.add("menu-item");
-li.textContent = "Пятый пункт";
+lastLi.classList.add('menu-item');
+lastLi.textContent = 'Пятый пункт';
 
-x.style.background = "url(img/apple_true.jpg) center no-repeat";
+menu.appendChild(lastLi);
+//2)
+document.body.style.background = 'url(img/apple_true.jpg) center no-repeat';
 
-divTitle.textContent = "Мы продаем только подлинную технику Apple";
+//3)
+divTitle.textContent = 'Мы продаем только подлинную технику Apple';
+
+//4)
+column[1].removeChild(divAdv);
+console.log(column[0]);
