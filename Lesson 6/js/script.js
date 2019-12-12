@@ -1,7 +1,8 @@
 "use strict";
 
-let startBtn = document.getElementById('start'), //1
-  budgetValue = document.getElementsByClassName('budget-value'),
+let startBtn = document.getElementById('start'),
+  //1
+  budgetValue = document.getElementsByClassName('budget-value')[0],
   //2
   dayBudgetValue = document.getElementsByClassName('daybudget-value'),
   levelValue = document.getElementsByClassName('level-value'),
@@ -25,20 +26,25 @@ let startBtn = document.getElementById('start'), //1
   percentValue = document.querySelector('.choose-percent'),
   yearValue = document.querySelector('.year-value'),
   monthValue = document.querySelector('.month-value'),
-  dayValue = document.querySelector('.day-value');
+  dayValue = document.querySelector('.day-value')[0];
 
 let money, time;
 
-function start() {
-  money = +prompt("Ваш бюджет на месяц?", "");
+startBtn.addEventListener('click', function () {
   time = prompt("Введите дату в формате YYYY-MM-DD", "");
+  money = +prompt("Ваш бюджет на месяц?", "");
 
   while (isNaN(money) || money == "" || money == null) {
     money = +prompt("Ваш бюджет на месяц?", "");
   }
-}
+  appData.budget = money;
+  appData.timeData = time;
+  budgetValue.textContent = money.toFixed();
+  yearValue = new Date(Date.parse(time)).getFullYear();
+  monthValue = new Date(Date.parse(time)).getMonth() + 1;
+  dayValue = new Date(Date.parse(time)).getDay();
 
-start();
+});
 
 let appData = {
   budget: money,
