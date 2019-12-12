@@ -1,26 +1,31 @@
 "use strict";
 
-let buttonStart = document.getElementById('start'), //1
-  divBudgetValue = document.getElementsByClassName('budget-value'), //2
-  divDayBudgetValue = document.getElementsByClassName('daybudget-value'),
-  divLevelValue = document.getElementsByClassName('level-value'),
-  divExpensesValue = document.getElementsByClassName('expenses-value'),
-  divOptExpensesValue = document.getElementsByClassName('optionalexpenses-value'),
-  divIncomeValue = document.getElementsByClassName('income-value'),
-  divMonthSavingsValue = document.getElementsByClassName('monthsavings-value'),
-  divYearSavingsValue = document.getElementsByClassName('yearsavings-value'), //3
-  inputsExpensesItem = document.getElementsByClassName('expenses-item'), //4
-  buttonApproveFirst = document.getElementsByTagName('button')[0],
-  buttonApproveSecond = document.getElementsByTagName('button')[1],
-  buttonCalculate = document.getElementsByTagName('button')[2], //5
-  inputsOptExpensesItem = document.querySelectorAll('.optionalexpenses-item'), //6
-  inputChooseIncome = document.querySelector('.choose-income'),
-  inputSavingsCheckbox = document.querySelector('#savings'),
-  inputChooseSum = document.querySelector('.choose-sum'),
-  inputChoosePercent = document.querySelector('.choose-percent'),
-  inputYearValue = document.querySelector('.year-value'),
-  inputMonthValue = document.querySelector('.month-value'),
-  inputDayValue = document.querySelector('.day-value');
+let startBtn = document.getElementById('start'), //1
+  budgetValue = document.getElementsByClassName('budget-value'),
+  //2
+  dayBudgetValue = document.getElementsByClassName('daybudget-value'),
+  levelValue = document.getElementsByClassName('level-value'),
+  expensesValue = document.getElementsByClassName('expenses-value'),
+  optExpensesValue = document.getElementsByClassName('optionalexpenses-value'),
+  incomeValue = document.getElementsByClassName('income-value'),
+  monthSavingsValue = document.getElementsByClassName('monthsavings-value'),
+  yearSavingsValue = document.getElementsByClassName('yearsavings-value'),
+  //3
+  expensesItem = document.getElementsByClassName('expenses-item'),
+  //4
+  expensesBtn = document.getElementsByTagName('button')[0],
+  optionalExpensesBtn = document.getElementsByTagName('button')[1],
+  countBtn = document.getElementsByTagName('button')[2],
+  //5
+  optExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
+  //6
+  incomeItem = document.querySelector('.choose-income'),
+  checkSavings = document.querySelector('#savings'),
+  sumValue = document.querySelector('.choose-sum'),
+  percentValue = document.querySelector('.choose-percent'),
+  yearValue = document.querySelector('.year-value'),
+  monthValue = document.querySelector('.month-value'),
+  dayValue = document.querySelector('.day-value');
 
 let money, time;
 
